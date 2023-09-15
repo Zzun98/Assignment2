@@ -12,7 +12,7 @@ struct HomeView: View {
     @State private var isShowingPopup = false
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 20) { // Align content to the leading edge
+        VStack(alignment: .leading, spacing: 20) {
             Text("Hello")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.black)
@@ -21,28 +21,36 @@ struct HomeView: View {
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.black)
             
-            ZStack(alignment: .leading) { // Align content in the ZStack to the leading edge
+            ZStack(alignment: .leading) {
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 331, height: 237)
+                    .frame(width: 330, height: 236)
                     .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
+                // These buttons are the 'Send text' buttons
+                // The number of these buttons will depend on how many groups the user sets in "Contacts"
                 Button(action: {
-                            // Put your action code here when the button is tapped
                             isShowingPopup = true // Show the popup when the button is tapped
                         }) {
-                            ZStack {
-                                Ellipse()
-                                    .fill(Color.white)
-                                    .frame(width: 51, height: 51)
-                                    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
-                                Image(systemName: "envelope")
-                                    .foregroundColor(.black)
-                                    .font(.system(size: 28))
-                                   // .frame(width: 28, height: 20)
-                            }
+                            HStack {
+                                    ZStack {
+                                        Ellipse()
+                                            .fill(Color.white)
+                                            .frame(width: 50, height: 50)
+                                            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
+                                        Image(systemName: "envelope")
+                                            .foregroundColor(.black)
+                                            .font(.system(size: 28))
+                                    }
+                                    Text("Group /n") // Replace with your button description
+                                        .font(.system(size: 20, weight: .semibold))
+                                        .foregroundColor(.black)
+                                }
                         }
+                        .offset(x: 20)
+                
+                        // If the user Clicks the action button 'Send text', everyone in that group will receive the same text message predefined in "Personalise"
                         .alert(isPresented: $isShowingPopup) {
                             Alert(
                                 title: Text("Text this Group?"),
