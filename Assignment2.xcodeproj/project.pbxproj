@@ -16,6 +16,8 @@
 		086FAD9A2AB3E1EF00ED146C /* Assignment2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD992AB3E1EF00ED146C /* Assignment2UITests.swift */; };
 		086FAD9C2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD9B2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift */; };
 		08D951C02AB440EF000125A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951BF2AB440EF000125A9 /* HomeView.swift */; };
+		08D951C22AB4C1A9000125A9 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C12AB4C1A9000125A9 /* ContactView.swift */; };
+		08D951C42AB4C1BA000125A9 /* PersonaliseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		086FAD992AB3E1EF00ED146C /* Assignment2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITests.swift; sourceTree = "<group>"; };
 		086FAD9B2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08D951BF2AB440EF000125A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		08D951C12AB4C1A9000125A9 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
+		08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaliseView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				08D951BF2AB440EF000125A9 /* HomeView.swift */,
+				08D951C12AB4C1A9000125A9 /* ContactView.swift */,
+				08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -290,6 +296,8 @@
 				086FAD812AB3E1EE00ED146C /* ContentView.swift in Sources */,
 				08D951C02AB440EF000125A9 /* HomeView.swift in Sources */,
 				086FAD7F2AB3E1EE00ED146C /* Assignment2App.swift in Sources */,
+				08D951C22AB4C1A9000125A9 /* ContactView.swift in Sources */,
+				08D951C42AB4C1BA000125A9 /* PersonaliseView.swift in Sources */,
 				082203A72AB3FA3F00BE7BAC /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

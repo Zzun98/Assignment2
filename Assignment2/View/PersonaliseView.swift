@@ -1,23 +1,21 @@
 //
-//  HomeView.swift
+//  PersonaliseView.swift
 //  Assignment2
 //
-//  Created by Sunjun Kwak on 15/9/2023.
+//  Created by Sunjun Kwak on 16/9/2023.
 //
 
 import Foundation
 import SwiftUI
 
-struct HomeView: View {
-    @State private var isShowingPopup = false
-    
+struct PersonaliseView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) { // Align content to the leading edge
-            Text("Hello")
+            Text("Personalise your texts")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.black)
             
-            Text("Quickly send a text message...")
+            Text("Text for Group /n")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.black)
             
@@ -30,33 +28,23 @@ struct HomeView: View {
                 
                 Button(action: {
                             // Put your action code here when the button is tapped
-                            isShowingPopup = true // Show the popup when the button is tapped
+                          
                         }) {
                             ZStack {
-                                Ellipse()
+                                Rectangle()
                                     .fill(Color.white)
-                                    .frame(width: 51, height: 51)
+                                    .frame(width: 260, height: 32)
+                                    .cornerRadius(6)
                                     .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
-                                Image(systemName: "envelope")
+                                Text("Edit Message")
+                                    .font(.system(size: 16, weight: .bold))
                                     .foregroundColor(.black)
-                                    .font(.system(size: 28))
                                    // .frame(width: 28, height: 20)
                             }
                         }
-                        .alert(isPresented: $isShowingPopup) {
-                            Alert(
-                                title: Text("Text this Group?"),
-                                message: Text("Are you sure you want to text everyone in this group with your message?"),
-                                primaryButton: .default(Text("Send text"), action: {
-                                    // Put your action code here for the Action button
-                                }),
-                                secondaryButton: .cancel(Text("Cancel"))
-                            )
-                        }
+
             }
         }
         .padding(.leading, 20) // Add some padding to align with the tab bar or as needed
     }
-
 }
-

@@ -16,25 +16,19 @@ struct ContentView: View {
                     Text("Home")
                 }
             
-            Text("Contacts")
+            ContactView()
                 .tabItem {
                     Image(systemName: "folder.fill")
                     Text("Contacts")
                 }
             
-            Text("Personalise")
+            PersonaliseView()
                 .tabItem {
                     Image(systemName: "slider.vertical.3")
                     Text("Personalise")
                 }
         }
-        /*VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()*/
+        
     }
 }
 
