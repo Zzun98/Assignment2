@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		082203A72AB3FA3F00BE7BAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082203A62AB3FA3F00BE7BAC /* ViewModel.swift */; };
+		084AE6422AB5EECA00D6568B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084AE6412AB5EECA00D6568B /* Group.swift */; };
 		086FAD7F2AB3E1EE00ED146C /* Assignment2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD7E2AB3E1EE00ED146C /* Assignment2App.swift */; };
 		086FAD812AB3E1EE00ED146C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD802AB3E1EE00ED146C /* ContentView.swift */; };
 		086FAD832AB3E1EE00ED146C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086FAD822AB3E1EE00ED146C /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		08D951C02AB440EF000125A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951BF2AB440EF000125A9 /* HomeView.swift */; };
 		08D951C22AB4C1A9000125A9 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C12AB4C1A9000125A9 /* ContactView.swift */; };
 		08D951C42AB4C1BA000125A9 /* PersonaliseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */; };
+		08DB8EC12AB7464E0083EE22 /* EditMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08DB8EC02AB7464E0083EE22 /* EditMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		082203A62AB3FA3F00BE7BAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		084AE6412AB5EECA00D6568B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		086FAD7B2AB3E1EE00ED146C /* Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086FAD7E2AB3E1EE00ED146C /* Assignment2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2App.swift; sourceTree = "<group>"; };
 		086FAD802AB3E1EE00ED146C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		08D951BF2AB440EF000125A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		08D951C12AB4C1A9000125A9 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaliseView.swift; sourceTree = "<group>"; };
+		08DB8EC02AB7464E0083EE22 /* EditMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 				08D951BF2AB440EF000125A9 /* HomeView.swift */,
 				08D951C12AB4C1A9000125A9 /* ContactView.swift */,
 				08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */,
+				08DB8EC02AB7464E0083EE22 /* EditMessageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 		082203A32AB3F9EA00BE7BAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				084AE6412AB5EECA00D6568B /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,11 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				084AE6422AB5EECA00D6568B /* Group.swift in Sources */,
 				086FAD812AB3E1EE00ED146C /* ContentView.swift in Sources */,
 				08D951C02AB440EF000125A9 /* HomeView.swift in Sources */,
 				086FAD7F2AB3E1EE00ED146C /* Assignment2App.swift in Sources */,
 				08D951C22AB4C1A9000125A9 /* ContactView.swift in Sources */,
 				08D951C42AB4C1BA000125A9 /* PersonaliseView.swift in Sources */,
+				08DB8EC12AB7464E0083EE22 /* EditMessageView.swift in Sources */,
 				082203A72AB3FA3F00BE7BAC /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

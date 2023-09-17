@@ -9,13 +9,17 @@ import Foundation
 import SwiftUI
 
 struct PersonaliseView: View {
+    @State private var message: String = "Edit your message here"
+    @State private var isEditingMessage = false // To control the popup visibility
+    @State private var editedMessage = "" // To store the edited message
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             Text("Personalise your texts")
                 .font(.system(size: 28, weight: .semibold))
                 .foregroundColor(.black)
             
-            Text("Text for Group /n")
+            Text("Text for Group")
                 .font(.system(size: 20, weight: .semibold))
                 .foregroundColor(.black)
             
@@ -26,26 +30,43 @@ struct PersonaliseView: View {
                     .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
-                // Tapping on this button should allow the user to edit the predefined message that shows in the corresponding rectangle
+                Text(message)
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundColor(.black)
+                    .padding()
+                
+                // Button to open the edit popup
                 Button(action: {
-                            // Put your action code here when the button is tapped
-                          
-                        }) {
-                            ZStack {
-                                Rectangle()
-                                    .fill(Color.white)
-                                    .frame(width: 260, height: 32)
-                                    .cornerRadius(6)
-                                    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
-                                Text("Edit Message")
-                                    .font(.system(size: 16, weight: .bold))
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .offset(x: 0, y: 80)
-
+                    isEditingMessage = true // Show the popup
+                    editedMessage = message // Initialize edited message with the current message
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 260, height: 32)
+                            .cornerRadius(6)
+                            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
+                        Text("Edit Message")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.black)
+                    }
+                }
+                .offset(x: 0, y: 80)
+            }
+            .padding(.leading, 20)
+            
+            // Edit Message Popup
+            if isEditingMessage {
+                EditMessageView(message: $editedMessage, isEditingMessage: $isEditingMessage)
+                    .onChange(of: editedMessage) { newValue in
+                        // Update the message when the editedMessage changes
+                        message = newValue
+                    }
+                    .frame(width: 330, height: 236) // Match the size of the rectangle in PersonaliseView
+                    .background(Color(red: 0.84, green: 0.97, blue: 0.85)) // Ensure the rectangle background is white// Apply corner radius
+                    //.shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4) // Apply shadow
+                }
             }
         }
-        .padding(.leading, 20) // Add some padding to align with the tab bar or as needed
     }
-}
+

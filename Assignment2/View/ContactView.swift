@@ -10,6 +10,8 @@ import SwiftUI
 import ContactsUI
 
 struct ContactView: View {
+    @State private var isShowingPopup2 = false
+    @State private var isShowingPopup3 = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -24,12 +26,23 @@ struct ContactView: View {
                 
                 // Pressing this button will show a pop up screen asking the user if they really want to delete this group and if the user presses "Delete", the group will no longer exist
                 Button(action: {
+                    isShowingPopup2 = true
                                         // Put your action code here when the button is tapped
                 }) {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
                         .font(.system(size: 20))
                 }
+            }
+            .alert(isPresented: $isShowingPopup2) {
+                Alert(
+                    title: Text("Delete Group?"),
+                    message: Text("Are you sure you want to delete this group?"),
+                    primaryButton: .default(Text("Delete"), action: {
+                        // Put your action code here for the Action button
+                    }),
+                    secondaryButton: .cancel(Text("Cancel"))
+                )
             }
             
             
@@ -63,8 +76,10 @@ struct ContactView: View {
             
             // Tapping this button should allow the user to newly name and create a group
             // If a user taps this button, a pop up message asking users to input a new name will be shown. Afterwards, if the user clicks 'Confirm', a new group with that name will be created.
-            Button(action: {
-                                    // Put your action code here when the button is tapped
+            VStack {
+                Spacer()
+                Button(action: {
+                                // Put your action code here when the button is tapped
                         }) {
                             ZStack {
                                 Rectangle()
@@ -77,7 +92,11 @@ struct ContactView: View {
                                     .foregroundColor(.white)
                             }
                         }
+                }
+            .padding(.horizontal, 20)
+                    
+            Spacer()
         }
-        .padding(.leading, 20) 
+        
     }
 }
