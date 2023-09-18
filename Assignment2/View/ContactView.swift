@@ -12,6 +12,8 @@ import ContactsUI
 struct ContactView: View {
     @State private var isShowingPopup2 = false
     @State private var isShowingPopup3 = false
+    @State private var groupName: String = ""
+    @State private var newGroupName: String = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -20,14 +22,14 @@ struct ContactView: View {
                 .foregroundColor(.black)
             
             HStack {
-                Text("Group /n")
+                Text("Group \(groupName)")
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(.black)
                 
                 // Pressing this button will show a pop up screen asking the user if they really want to delete this group and if the user presses "Delete", the group will no longer exist
                 Button(action: {
                     isShowingPopup2 = true
-                                        // Put your action code here when the button is tapped
+                    // Put your action code here when the button is tapped
                 }) {
                     Image(systemName: "trash")
                         .foregroundColor(.red)
@@ -50,28 +52,28 @@ struct ContactView: View {
                 // Once the user has added some people in this group, their names will be shown here
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 330, height: 236)
+                    .frame(width: UIScreen.main.bounds.width * 0.8, height: 236)
                     .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
                 // Tapping this button should allow users to change the members in a group
                 Button(action: {
-                            // Put your action code here when the button is tapped
-                          
-                        }) {
-                            ZStack {
-                                Rectangle()
-                                    .fill(Color.white)
-                                    .frame(width: 260, height: 32)
-                                    .cornerRadius(6)
-                                    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
-                                Text("Edit People")
-                                    .font(.system(size: 16, weight: .bold))
-                                    .foregroundColor(.black)
-                            }
-                        }
-                        .offset(x: 0, y: 80)
-
+                    // Put your action code here when the button is tapped
+                    
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 260, height: 32)
+                            .cornerRadius(6)
+                            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
+                        Text("Edit People")
+                            .font(.system(size: 16, weight: .bold))
+                            .foregroundColor(.black)
+                    }
+                }
+                .offset(x: 0, y: 80)
+                
             }
             
             // Tapping this button should allow the user to newly name and create a group
@@ -79,24 +81,29 @@ struct ContactView: View {
             VStack {
                 Spacer()
                 Button(action: {
-                                // Put your action code here when the button is tapped
-                        }) {
-                            ZStack {
-                                Rectangle()
-                                    .fill(Color.green)
-                                    .frame(width: 300, height: 36)
-                                    .cornerRadius(6)
-                                    .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
-                                Text("Create a group")
-                                    .font(.system(size: 20, weight: .bold))
-                                    .foregroundColor(.white)
-                            }
-                        }
+                    isShowingPopup3.toggle()
+                    // Put your action code here when the button is tapped
+                }) {
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.green)
+                            .frame(width: UIScreen.main.bounds.width * 0.8, height: 36)
+                            .cornerRadius(6)
+                            .shadow(color: Color.black.opacity(0.5), radius: 2, x: 0, y: 4)
+                        Text("Create a group")
+                            .font(.system(size: 20, weight: .bold))
+                            .foregroundColor(.white)
+                    }
                 }
-            .padding(.horizontal, 20)
-                    
-            Spacer()
+                .alert("Name your new group", isPresented: $isShowingPopup3) {
+                    TextField("Name your new group", text: $newGroupName)
+                    Button("Confirm")
+                    {
+                      // Write logic for the Confirm button here, which ideally should create a new rectangle
+                    }
+                }
+                Spacer().frame(height: 40)
+            }
         }
-        
     }
 }

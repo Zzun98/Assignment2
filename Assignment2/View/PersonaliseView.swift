@@ -15,18 +15,20 @@ struct PersonaliseView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            Text("Personalise your texts")
-                .font(.system(size: 28, weight: .semibold))
-                .foregroundColor(.black)
-            
-            Text("Text for Group")
-                .font(.system(size: 20, weight: .semibold))
-                .foregroundColor(.black)
+            VStack(alignment: .leading, spacing: 20) {
+                Text("Personalise your texts")
+                    .font(.system(size: 28, weight: .semibold))
+                    .foregroundColor(.black)
+                            
+                Text("Text for Group")
+                    .font(.system(size: 20, weight: .semibold))
+                    .foregroundColor(.black)
+                }
             
             ZStack(alignment: .center) {
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 330, height: 236)
+                    .frame(width: UIScreen.main.bounds.width * 0.8, height: 236)
                     .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
@@ -37,7 +39,7 @@ struct PersonaliseView: View {
                 
                 // Button to open the edit popup
                 Button(action: {
-                    isEditingMessage = true // Show the popup
+                    self.isEditingMessage = true // Show the popup
                     editedMessage = message // Initialize edited message with the current message
                 }) {
                     ZStack {
@@ -51,22 +53,19 @@ struct PersonaliseView: View {
                             .foregroundColor(.black)
                     }
                 }
-                .offset(x: 0, y: 80)
-            }
-            .padding(.leading, 20)
-            
-            // Edit Message Popup
-            if isEditingMessage {
-                EditMessageView(message: $editedMessage, isEditingMessage: $isEditingMessage)
-                    .onChange(of: editedMessage) { newValue in
+                .popover(isPresented: $isEditingMessage) {
+                    EditMessageView(message: $editedMessage, isEditingMessage: $isEditingMessage)
+                        .onChange(of: editedMessage) { newValue in
                         // Update the message when the editedMessage changes
                         message = newValue
+                        UserDefaults.standard.set(message, forKey: "messageKey")
                     }
-                    .frame(width: 330, height: 236) // Match the size of the rectangle in PersonaliseView
-                    .background(Color(red: 0.84, green: 0.97, blue: 0.85)) // Ensure the rectangle background is white// Apply corner radius
-                    //.shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4) // Apply shadow
+                        .frame(width: 330, height: 236)
+                        .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                 }
+                .offset(x: 0, y: 80)
             }
         }
     }
+}
 

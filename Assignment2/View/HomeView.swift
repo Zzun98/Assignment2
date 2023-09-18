@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var isShowingPopup = false
+    @State private var groupName: String = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -24,7 +25,7 @@ struct HomeView: View {
             ZStack(alignment: .leading) {
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 330, height: 236)
+                    .frame(width: UIScreen.main.bounds.width * 0.8, height: 236)
                     .background(Color(red: 0.84, green: 0.97, blue: 0.85))
                     .shadow(color: .black.opacity(0.25), radius: 2, x: 0, y: 4)
                 
@@ -43,7 +44,7 @@ struct HomeView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 28))
                                     }
-                                    Text("Group /n") // Replace with your button description
+                                    Text("Group \(groupName)") // Replace with your button description
                                         .font(.system(size: 20, weight: .semibold))
                                         .foregroundColor(.black)
                                 }
@@ -63,7 +64,7 @@ struct HomeView: View {
                         }
             }
         }
-        .padding(.leading, 20) // Add some padding to align with the tab bar or as needed
+        //.padding(.leading, 20) 
     }
 
 }

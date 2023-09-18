@@ -11,17 +11,20 @@ import SwiftUI
 struct EditMessageView: View {
     @Binding var message: String
     @Binding var isEditingMessage: Bool
+    //@State private var editedMessage = ""
     
     var body: some View {
-        
-            
             VStack {
-                TextField("Edit your message", text: $message)
-                //.textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
+                ScrollView {
+                    TextEditor(text: $message)
+                        .frame(width: UIScreen.main.bounds.width * 0.8, height: 100)
+                        .multilineTextAlignment(.leading)
+                        .padding()
+                }
                 
                 HStack {
                     Button(action: {
+                        //editedMessage = UserDefaults.standard.string(forKey: "messageKey") ?? ""
                         isEditingMessage = false
                     }) {
                         ZStack {
@@ -53,9 +56,8 @@ struct EditMessageView: View {
                         .padding()
                     }
                 }
-                .offset(x: 10, y: 50)
+                .offset(x: 10)
             }
-            
         }
     }
 
