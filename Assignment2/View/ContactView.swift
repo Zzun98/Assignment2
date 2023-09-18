@@ -7,7 +7,8 @@
 
 import Foundation
 import SwiftUI
-import ContactsUI
+import Contacts
+//import ContactsUI
 
 struct ContactView: View {
     @State private var isShowingPopup2 = false
@@ -47,7 +48,6 @@ struct ContactView: View {
                 )
             }
             
-            
             ZStack(alignment: .center) {
                 // Once the user has added some people in this group, their names will be shown here
                 Rectangle()
@@ -59,7 +59,9 @@ struct ContactView: View {
                 // Tapping this button should allow users to change the members in a group
                 Button(action: {
                     // Put your action code here when the button is tapped
-                    
+                    Task.init {
+                        await showContactPicker()
+                    }
                 }) {
                     ZStack {
                         Rectangle()
@@ -99,11 +101,38 @@ struct ContactView: View {
                     TextField("Name your new group", text: $newGroupName)
                     Button("Confirm")
                     {
-                      // Write logic for the Confirm button here, which ideally should create a new rectangle
+                        // Write logic for the Confirm button here, which ideally should create a new rectangle
                     }
                 }
                 Spacer().frame(height: 40)
             }
         }
+    }
+    
+    func showContactPicker() async {
+        let store = CNContactStore()
+        let keys = [CNContactGivenNameKey, CNContactPhoneNumbersKey] as [CNKeyDescriptor]
+        let fetchRequest = CNContactFetchRequest(keysToFetch: keys)
+        
+        do {
+            try store.enumerateContacts(with: fetchRequest, usingBlock: { contact, result in
+                print(contact.givenName)
+                for number in contact.phoneNumbers {
+                    switch number.label {
+                    case CNLabelPhoneNumberMobile:
+                        print("- Mobile: \(number.value.stringValue)")
+                    case CNLabelPhoneNumberMain:
+                        print("- Main: \(number.value.stringValue)")
+                    default:
+                        print("- Other: \(number.value.stringValue)")
+                    }
+                    print("- \(number.label): \(number.value.stringValue)")
+                }
+            })
+        }
+        catch {
+            print("Error")
+        }
+        
     }
 }

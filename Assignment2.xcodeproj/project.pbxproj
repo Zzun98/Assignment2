@@ -52,6 +52,7 @@
 		086FAD952AB3E1EF00ED146C /* Assignment2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086FAD992AB3E1EF00ED146C /* Assignment2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITests.swift; sourceTree = "<group>"; };
 		086FAD9B2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08D932B52AB8814200C20136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		08D951BF2AB440EF000125A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		08D951C12AB4C1A9000125A9 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
 		08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonaliseView.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 		086FAD7D2AB3E1EE00ED146C /* Assignment2 */ = {
 			isa = PBXGroup;
 			children = (
+				08D932B52AB8814200C20136 /* Info.plist */,
 				086FAD7E2AB3E1EE00ED146C /* Assignment2App.swift */,
 				086FAD802AB3E1EE00ED146C /* ContentView.swift */,
 				082203A22AB3F9D600BE7BAC /* View */,
@@ -467,6 +469,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Assignment2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Assignment2/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Access contacts in order to group them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -495,6 +499,8 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Assignment2/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Assignment2/Info.plist;
+				INFOPLIST_KEY_NSContactsUsageDescription = "Access contacts in order to group them";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
