@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		082203A72AB3FA3F00BE7BAC /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082203A62AB3FA3F00BE7BAC /* ViewModel.swift */; };
-		084AE6422AB5EECA00D6568B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084AE6412AB5EECA00D6568B /* Group.swift */; };
 		086FAD7F2AB3E1EE00ED146C /* Assignment2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD7E2AB3E1EE00ED146C /* Assignment2App.swift */; };
 		086FAD812AB3E1EE00ED146C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD802AB3E1EE00ED146C /* ContentView.swift */; };
 		086FAD832AB3E1EE00ED146C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 086FAD822AB3E1EE00ED146C /* Assets.xcassets */; };
@@ -16,6 +15,9 @@
 		086FAD902AB3E1EF00ED146C /* Assignment2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD8F2AB3E1EF00ED146C /* Assignment2Tests.swift */; };
 		086FAD9A2AB3E1EF00ED146C /* Assignment2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD992AB3E1EF00ED146C /* Assignment2UITests.swift */; };
 		086FAD9C2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086FAD9B2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift */; };
+		08743B5A2AB91430004BA3B2 /* EditPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08743B592AB91430004BA3B2 /* EditPeopleView.swift */; };
+		08743B5C2AB95723004BA3B2 /* groups.json in Resources */ = {isa = PBXBuildFile; fileRef = 08743B5B2AB95723004BA3B2 /* groups.json */; };
+		0893F3B52AB983A90037CB78 /* ParseGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0893F3B42AB983A90037CB78 /* ParseGroup.swift */; };
 		08D951C02AB440EF000125A9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951BF2AB440EF000125A9 /* HomeView.swift */; };
 		08D951C22AB4C1A9000125A9 /* ContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C12AB4C1A9000125A9 /* ContactView.swift */; };
 		08D951C42AB4C1BA000125A9 /* PersonaliseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */; };
@@ -41,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		082203A62AB3FA3F00BE7BAC /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		084AE6412AB5EECA00D6568B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		086FAD7B2AB3E1EE00ED146C /* Assignment2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		086FAD7E2AB3E1EE00ED146C /* Assignment2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2App.swift; sourceTree = "<group>"; };
 		086FAD802AB3E1EE00ED146C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +53,9 @@
 		086FAD952AB3E1EF00ED146C /* Assignment2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Assignment2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		086FAD992AB3E1EF00ED146C /* Assignment2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITests.swift; sourceTree = "<group>"; };
 		086FAD9B2AB3E1EF00ED146C /* Assignment2UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assignment2UITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08743B592AB91430004BA3B2 /* EditPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPeopleView.swift; sourceTree = "<group>"; };
+		08743B5B2AB95723004BA3B2 /* groups.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = groups.json; path = ../../../groups.json; sourceTree = "<group>"; };
+		0893F3B42AB983A90037CB78 /* ParseGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseGroup.swift; sourceTree = "<group>"; };
 		08D932B52AB8814200C20136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		08D951BF2AB440EF000125A9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		08D951C12AB4C1A9000125A9 /* ContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				08D951C12AB4C1A9000125A9 /* ContactView.swift */,
 				08D951C32AB4C1BA000125A9 /* PersonaliseView.swift */,
 				08DB8EC02AB7464E0083EE22 /* EditMessageView.swift */,
+				08743B592AB91430004BA3B2 /* EditPeopleView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,7 +111,8 @@
 		082203A32AB3F9EA00BE7BAC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				084AE6412AB5EECA00D6568B /* Group.swift */,
+				08743B5B2AB95723004BA3B2 /* groups.json */,
+				0893F3B42AB983A90037CB78 /* ParseGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				086FAD862AB3E1EE00ED146C /* Preview Assets.xcassets in Resources */,
+				08743B5C2AB95723004BA3B2 /* groups.json in Resources */,
 				086FAD832AB3E1EE00ED146C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,7 +308,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				084AE6422AB5EECA00D6568B /* Group.swift in Sources */,
+				08743B5A2AB91430004BA3B2 /* EditPeopleView.swift in Sources */,
+				0893F3B52AB983A90037CB78 /* ParseGroup.swift in Sources */,
 				086FAD812AB3E1EE00ED146C /* ContentView.swift in Sources */,
 				08D951C02AB440EF000125A9 /* HomeView.swift in Sources */,
 				086FAD7F2AB3E1EE00ED146C /* Assignment2App.swift in Sources */,

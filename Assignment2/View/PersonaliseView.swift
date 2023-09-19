@@ -53,6 +53,8 @@ struct PersonaliseView: View {
                             .foregroundColor(.black)
                     }
                 }
+                
+                // Edit message popup
                 .popover(isPresented: $isEditingMessage) {
                     EditMessageView(message: $editedMessage, isEditingMessage: $isEditingMessage)
                         .onChange(of: editedMessage) { newValue in
@@ -65,7 +67,7 @@ struct PersonaliseView: View {
                 }
                 .offset(x: 0, y: 80)
             }
+            }
         }
     }
-}
 

@@ -7,10 +7,27 @@
 
 import Foundation
 import SwiftUI
+import MessageUI
 
 struct HomeView: View {
     @State private var isShowingPopup = false
     @State private var groupName: String = ""
+    let buttons: [(label: String, description: String)] = [
+        ("Group 1", "Description 1"),
+        ("Group 2", "Description 2"),
+        ("Group 3", "Description 3")
+    ]
+    /*@IBAction func messageButtonPressed(_sender: UIButton) {
+        guard MFMessageComposeViewController.canSendText() else {
+            print("Cannot send text with this device")
+            return
+        }
+        let composer = MFMessageComposeViewController()
+        composer.recipients = ["1234556"]
+        composer.subject = "Hello World"
+        present(composer, animated: true)
+    }*/
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
@@ -31,10 +48,13 @@ struct HomeView: View {
                 
                 // These buttons are the 'Send text' buttons
                 // The number of these buttons will depend on how many groups the user sets in "Contacts"
-                Button(action: {
-                            isShowingPopup = true // Show the popup when the button is tapped
-                        }) {
-                            HStack {
+                VStack(alignment: .leading, spacing: 20) {
+                        ForEach(buttons, id: \.label) { button in
+                            Button(action: {
+                                isShowingPopup = true
+                                groupName = button.label
+                            }) {
+                                HStack {
                                     ZStack {
                                         Ellipse()
                                             .fill(Color.white)
@@ -44,28 +64,28 @@ struct HomeView: View {
                                             .foregroundColor(.black)
                                             .font(.system(size: 28))
                                     }
-                                    Text("Group \(groupName)") // Replace with your button description
+                                    Text(button.label)
                                         .font(.system(size: 20, weight: .semibold))
                                         .foregroundColor(.black)
                                 }
+                            }
+                            .alert(isPresented: $isShowingPopup) {
+                                Alert(
+                                    title: Text("Text this Group?"),
+                                    message: Text("Are you sure you want to text everyone in this group with your message?"),
+                                    primaryButton: .default(Text("Send text"), action: {
+                                        // Put your action code here for the Action button
+                                    }),
+                                    secondaryButton: .cancel(Text("Cancel"))
+                                )
+                            }
                         }
-                        .offset(x: 20)
-                
-                        // If the user Clicks the action button 'Send text', everyone in that group will receive the same text message predefined in "Personalise"
-                        .alert(isPresented: $isShowingPopup) {
-                            Alert(
-                                title: Text("Text this Group?"),
-                                message: Text("Are you sure you want to text everyone in this group with your message?"),
-                                primaryButton: .default(Text("Send text"), action: {
-                                    // Put your action code here for the Action button
-                                }),
-                                secondaryButton: .cancel(Text("Cancel"))
-                            )
-                        }
+                    }
+                    .padding(.horizontal, 20)
+                }
             }
+            .padding(.top, 20)
         }
-        //.padding(.leading, 20) 
     }
 
-}
 
